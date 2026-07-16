@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dorf Event App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+    <header class="app-header">
+      <div>
+        <p class="eyebrow">Lokale Events</p>
+        <h1>Dorf Event App</h1>
+      </div>
+      <div class="summary">
+        <span id="eventCount">0 Events</span>
+        <span id="hotspotCount">0 Zusagen</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="map-panel" aria-label="Eventkarte">
+        <div id="map"></div>
+      </section>
+
+      <aside class="sidebar">
+        <div class="toolbar" aria-label="Eventfilter">
+          <input id="searchInput" type="search" placeholder="Event oder Ort suchen">
+          <select id="categoryFilter" aria-label="Kategorie">
+            <option value="all">Alle Kategorien</option>
+            <option value="Sport">Sport</option>
+            <option value="Brauchtum">Brauchtum</option>
+            <option value="Markt">Markt</option>
+            <option value="Kultur">Kultur</option>
+          </select>
+          <div class="segments" aria-label="Zeitraum">
+            <button class="segment active" data-timeframe="all">Alle</button>
+            <button class="segment" data-timeframe="today">Heute</button>
+            <button class="segment" data-timeframe="weekend">Wochenende</button>
+          </div>
+        </div>
+
+        <div id="eventList" class="event-list" aria-live="polite"></div>
+      </aside>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
+
